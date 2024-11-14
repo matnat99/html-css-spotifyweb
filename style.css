@@ -1,0 +1,42 @@
+/* RESET */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* GENERAL */
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    height: calc(100% - 100px);
+}
+
+
+/* HEADER */
+header{
+    background-color: blue;
+    width: 50px;
+    flex-shrink: 0;
+}
+
+
+/* MAIN */
+main{
+    background-color: brown;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+
+/* FOOTER */
+footer{
+    background-color: blueviolet;
+    height: 100px;
+    flex-shrink: 0;
+}
