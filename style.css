@@ -14,29 +14,159 @@ body{
 
 .container{
     display: flex;
-    height: calc(100% - 100px);
+    height: calc(100% - 5.625rem);
+}
+
+img{
+    width: 100%;
 }
 
 
 /* HEADER */
 header{
-    background-color: blue;
-    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #000000;
+    color: #717171;
+    width: 3.125rem;
     flex-shrink: 0;
+    padding: .375rem .75rem;
 }
+
+header div{
+    display: flex;
+}
+
+header span, li, h4, hr, #add-square{
+    display: none;
+}
+
+header div > span{
+    font-size: .875rem;
+    margin-left: .3125rem;
+}
+
+img:not(#nav-top div > #logo){
+    width: 1.375rem;
+    margin-bottom: .375rem;
+}
+
+#logo{
+    display: none;
+    width: 6.25rem;
+    margin-bottom: 1.5625rem;
+}
+
+#nav-center h4{
+    margin-top: 1.25rem;
+}
+
+#playlist-name{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#add-square{
+    background-color: #A3A3A3;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    line-height: 2.5rem;
+    margin: .9375rem 0;
+    font-size: 1.5625rem;
+    color: #000000;
+} 
+
+#add-playlist-container > span{
+    line-height: 2.5rem;
+}
+
+#playlist-name ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+#playlist-name ul > li{
+    margin-bottom: .25rem;
+    font-size: .875rem;
+}
+
+#nav-bottom{
+    display: flex;
+    flex-direction: column;
+}
+
+#nav-bottom img{
+    width: 1.125rem;
+}
+
+#profile{
+    background-color: #808080;
+    border-radius: 100%;
+    margin-top: .9375rem;
+    padding: .0625rem .25rem;
+    text-align: center;
+    line-height: .625rem;
+}
+
+#nav-bottom > hr{
+    margin: .625rem 0;
+}
+
+#container-profile > span{
+    line-height: .625rem;
+}
+
 
 
 /* MAIN */
 main{
-    background-color: brown;
+    background-color: #141922;
     flex-grow: 1;
     overflow-y: auto;
+}
+
+#header-main{
+    background-color: #080B12;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 5rem;
 }
 
 
 /* FOOTER */
 footer{
-    background-color: blueviolet;
-    height: 100px;
+    background-color: #282828;
+    height: 5.625rem;
     flex-shrink: 0;
+}
+
+/* RESPONSIVE */
+/* Da 500px a infinito */
+@media screen and (min-width: 550px){
+    header{
+        width: 9.375rem;
+    }
+
+    #nav-top div > #logo{
+        display: block;
+    }
+
+    #logo-small{
+        display: none;
+    }
+
+    header span, li, h4, hr, #add-square{
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width: 780px){
+    header{
+        width: 14.375rem;
+    }
 }
