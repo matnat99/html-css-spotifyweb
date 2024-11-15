@@ -7,6 +7,7 @@
 
 /* GENERAL */
 body{
+    font-family: "Roboto", sans-serif;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -19,6 +20,11 @@ body{
 
 img{
     width: 100%;
+}
+
+/* TIPOGRAPHY */
+h4{
+    font-size: 15px;
 }
 
 
@@ -38,26 +44,41 @@ header div{
     display: flex;
 }
 
-header span, li, h4, hr, #add-square{
+header a, span, li, h4, strong, hr, #add-square{
     display: none;
 }
 
-header div > span{
-    font-size: .875rem;
+header div > a{
+    font-size: .9375rem;
     margin-left: .3125rem;
 }
 
-img:not(#nav-top div > #logo){
-    width: 1.375rem;
-    margin-bottom: .375rem;
+header a{
+    color: #717171;
+    text-decoration: none;
 }
 
+img:not(#nav-top div > #logo,
+ #download > #icon-download,
+ #profile > img){
+    width: 1.375rem;
+    margin-bottom: .625rem;
+}
+
+
+/* Nav-top */
 #logo{
     display: none;
     width: 6.25rem;
     margin-bottom: 1.5625rem;
 }
 
+.padding{
+    padding-top: .1875rem;
+}
+
+
+/* Nav-center */
 #nav-center h4{
     margin-top: 1.25rem;
 }
@@ -78,8 +99,18 @@ img:not(#nav-top div > #logo){
     color: #000000;
 } 
 
-#add-playlist-container > span{
-    line-height: 2.5rem;
+#add-square > a{
+    color: #000000;
+}
+
+#create{
+    height: 2.5rem;
+    padding: 1.625rem 0;
+}
+
+#create > a{
+    font-size: .9375rem;
+    margin-left: .5rem;
 }
 
 #playlist-name ul{
@@ -89,34 +120,50 @@ img:not(#nav-top div > #logo){
 }
 
 #playlist-name ul > li{
-    margin-bottom: .25rem;
+    margin-bottom: .5rem;
     font-size: .875rem;
 }
 
+
+/* Nav-bottom */
 #nav-bottom{
     display: flex;
     flex-direction: column;
 }
 
-#nav-bottom img{
-    width: 1.125rem;
+#download{
+    margin-bottom: .625rem;
+}
+
+#icon-download{
+    width: .9375rem;
+}
+
+#download > span{
+    margin-bottom: .0625rem;
+    margin-left: .3125rem;
+}
+
+#nav-bottom > hr{
+    margin-bottom: .9375rem;
 }
 
 #profile{
     background-color: #808080;
     border-radius: 100%;
-    margin-top: .9375rem;
-    padding: .0625rem .25rem;
+    padding: 4px;
     text-align: center;
     line-height: .625rem;
 }
 
-#nav-bottom > hr{
-    margin: .625rem 0;
+#profile > img{
+    width: 1rem;
 }
 
-#container-profile > span{
-    line-height: .625rem;
+#username a > strong{
+    margin-left: .375rem;
+    color: white;
+    font-size: .875rem;
 }
 
 
@@ -138,6 +185,7 @@ main{
 }
 
 
+
 /* FOOTER */
 footer{
     background-color: #282828;
@@ -145,11 +193,13 @@ footer{
     flex-shrink: 0;
 }
 
+
+
 /* RESPONSIVE */
 /* Da 500px a infinito */
 @media screen and (min-width: 550px){
     header{
-        width: 9.375rem;
+        width: 10rem;
     }
 
     #nav-top div > #logo{
@@ -160,12 +210,14 @@ footer{
         display: none;
     }
 
-    header span, li, h4, hr, #add-square{
+    header a, span, li, h4, strong, hr, #add-square{
         display: inline-block;
     }
 }
 
-@media screen and (min-width: 780px){
+
+/* Da 800px a infinito */
+@media screen and (min-width: 800px){
     header{
         width: 14.375rem;
     }

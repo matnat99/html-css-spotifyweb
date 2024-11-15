@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- /Google Fonts -->
     <title>Spotify Web</title>
 </head>
 <body>
@@ -16,48 +21,69 @@
                 </div>
                 <div>
                     <img src="img/home.svg" alt="Home">
-                    <span>Home</span>
+                    <div class="padding">
+                        <a href="#">Home</a>
+                    </div>
                 </div>
                 <div>
                     <img src="img/search.svg" alt="Search">
-                    <span>Cerca</span>
+                    <div class="padding">
+                        <a href="#">Cerca</a>
+                    </div>
                 </div>
                 <div>
                     <img src="img/libreria.svg" alt="Libreria">
-                    <span>La tua libreria</span>
+                    <div class="padding">
+                        <a href="#">La tua libreria</a>
+                    </div>
                 </div> 
                 <nav id="nav-center">
                     <h4>PLAYLIST</h4>
                     <div id="add-playlist-container">
-                        <div id="add-square">
-                            <strong>+</strong>
+                        <a href="#" id="add-square">+</a>
+                        <div id="create">
+                            <a href="#">Crea Playlist</a>
                         </div>
-                        <span>Crea playlist</span>
                     </div>
                     <div id="playlist-name">
                         <ul>
-                            <li>Nome Playlist</li>
-                            <li>Nome Playlist</li>
-                            <li>Nome Playlist</li>
-                            <li>Nome Playlist</li>
-                            <li>Nome Playlist</li>
-                            <li>Nome Playlist</li>
-                            <li>Nome Playlist</li>
+                            <li>
+                                <a href="#">Nome Playlist</a>
+                            </li>
+                            <li>
+                                <a href="#">Nome Playlist</a>
+                            </li>
+                            <li>
+                                <a href="#">Nome Playlist</a>
+                            </li>
+                            <li>
+                                <a href="#">Nome Playlist</a>
+                            </li>
+                            <li>
+                                <a href="#">Nome Playlist</a>
+                            </li>
+                            <li>
+                                <a href="#">Nome Playlist</a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
             </nav>
             <nav id="nav-bottom">
-                <div>
-                    <img src="img/download.svg" alt="Download">
-                    <span>Installa app</span>
+                <div id="download">
+                    <img id="icon-download" src="img/download.svg" alt="Download">
+                    <a href="#">Installa app</a>
                 </div>
                 <hr>
-                <div id="container-profile">
+                <div class="container-profile">
                     <div id="profile">
                         <img src="img/profile.svg" alt="Profilo">
                     </div>
-                    <span>Mattia Natale</span>
+                    <div id="username">
+                        <a href="#">
+                            <strong>Mattia Natale</strong>
+                        </a>
+                    </div>
                 </div>
             </nav>
         </header>
