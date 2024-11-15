@@ -62,7 +62,7 @@ header{
     color: #717171;
     width: 3.125rem;
     flex-shrink: 0;
-    padding: .625rem .75rem;
+    padding: .625rem .75rem .625rem 0;
     overflow-y: auto;
 }
 
@@ -74,7 +74,7 @@ header div{
     display: flex;
 }
 
-header #playlist, a, span, h4, strong, hr, #add-square{
+header #playlist, a, header span, h4, strong, hr, #add-square{
     display: none;
 }
 
@@ -103,13 +103,18 @@ header img:not(#nav-top div > #logo,
     margin-bottom: 1.5625rem;
 }
 
-.padding{
-    padding-top: .1875rem;
+.select{
+    padding-left: .75rem;
+    border-left: .125rem solid #000000;
+}
+
+.margin{
+    margin-top: .1875rem;
 }
 
 /* Playlist */
 #playlist{
-    overflow-y: auto;
+    padding-left: .75rem;
 }
 
 #playlist h4{
@@ -150,11 +155,12 @@ header img:not(#nav-top div > #logo,
 #playlist-name ul{
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 #playlist-name ul > li{
     margin-bottom: .5rem;
-    font-size: .875rem;
+    font-size: .8125rem;
 }
 
 
@@ -162,6 +168,7 @@ header img:not(#nav-top div > #logo,
 #nav-bottom{
     display: flex;
     flex-direction: column;
+    padding-left: .75rem;
 }
 
 #download{
@@ -172,7 +179,7 @@ header img:not(#nav-top div > #logo,
     width: .9375rem;
 }
 
-#download > span{
+#download > a{
     margin-bottom: .0625rem;
     margin-left: .3125rem;
 }
@@ -210,6 +217,10 @@ main{
     overflow-x: hidden;
 }
 
+main::-webkit-scrollbar{
+    display: none;
+}
+
 #header-main{
     background-color: #080B12;
     position: sticky;
@@ -244,6 +255,8 @@ main{
 
 .row{
     display: flex;
+    flex-wrap: wrap;
+    row-gap: .625rem;
 }
 
 .row .col{
@@ -271,6 +284,21 @@ main{
 
 .container-album:hover .hoverlay{
     display: block;
+}
+
+.container-details{
+    text-align: center;
+}
+
+.container-details > h5{
+    color: #fff;
+    display: block;
+    font-size: .875rem;
+}
+
+.container-details > span{
+    color: #717171;
+    font-size: .8125rem;
 }
 
 
@@ -302,15 +330,13 @@ footer{
         display: none;
     }
 
-    .padding:first-child{
-        border-left: ;
-    } 
-
-    header #playlist, a, span, h4, strong, hr, #add-square{
-        display: inline-block;
+    .select.lime{
+        border-left: .125rem solid limegreen;
     }
 
-    /* Main */
+    header #playlist, a, header span, h4, strong, hr, #add-square{
+        display: inline-block;
+    }
 }
 
 
@@ -318,5 +344,16 @@ footer{
 @media screen and (min-width: 800px){
     header{
         width: 14.375rem;
+    }
+
+    .row .col{
+        width: calc(100% / 4);
+    }
+}
+
+/* Da 1500px a infinito */
+@media screen and (min-width: 1500px){
+    .row .col{
+        width: calc(100% / 6);
     }
 }
