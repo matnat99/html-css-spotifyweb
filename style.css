@@ -5,9 +5,11 @@
     padding: 0;
 }
 
+
+
 /* GENERAL */
 body{
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -18,14 +20,37 @@ body{
     height: calc(100% - 5.625rem);
 }
 
+ul{
+    list-style: none;
+}
+
 img{
     width: 100%;
 }
 
+
+
 /* TIPOGRAPHY */
+h3{
+    color: #fff;
+    margin-bottom: 1.25rem;
+}
+
 h4{
     font-size: 15px;
 }
+
+
+
+/* BUTTONS */
+button{
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: .625rem 1.875rem;
+    border-radius: 1.875rem;
+}
+
 
 
 /* HEADER */
@@ -37,14 +62,19 @@ header{
     color: #717171;
     width: 3.125rem;
     flex-shrink: 0;
-    padding: .375rem .75rem;
+    padding: .625rem .75rem;
+    overflow-y: auto;
+}
+
+header::-webkit-scrollbar{
+    display: none;
 }
 
 header div{
     display: flex;
 }
 
-header a, span, li, h4, strong, hr, #add-square{
+header #playlist, a, span, h4, strong, hr, #add-square{
     display: none;
 }
 
@@ -58,7 +88,7 @@ header a{
     text-decoration: none;
 }
 
-img:not(#nav-top div > #logo,
+header img:not(#nav-top div > #logo,
  #download > #icon-download,
  #profile > img){
     width: 1.375rem;
@@ -69,7 +99,7 @@ img:not(#nav-top div > #logo,
 /* Nav-top */
 #logo{
     display: none;
-    width: 6.25rem;
+    width: 9.375rem;
     margin-bottom: 1.5625rem;
 }
 
@@ -77,10 +107,14 @@ img:not(#nav-top div > #logo,
     padding-top: .1875rem;
 }
 
+/* Playlist */
+#playlist{
+    overflow-y: auto;
+}
 
-/* Nav-center */
-#nav-center h4{
+#playlist h4{
     margin-top: 1.25rem;
+    color: #fff;
 }
 
 #playlist-name{
@@ -114,7 +148,6 @@ img:not(#nav-top div > #logo,
 }
 
 #playlist-name ul{
-    list-style: none;
     display: flex;
     flex-direction: column;
 }
@@ -161,6 +194,7 @@ img:not(#nav-top div > #logo,
 }
 
 #username a > strong{
+    margin-top: .25rem;
     margin-left: .375rem;
     color: white;
     font-size: .875rem;
@@ -173,6 +207,7 @@ main{
     background-color: #141922;
     flex-grow: 1;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #header-main{
@@ -181,8 +216,64 @@ main{
     top: 0;
     left: 0;
     z-index: 10;
-    height: 5rem;
+    min-height: 5rem;
+    padding: 0 .9375rem;
+    text-align: right;
+    line-height: 5rem;
 }
+
+#nav-main{
+    color: #717171;
+    font-size: .75rem;
+    font-weight: 800;
+}
+
+#nav-main > ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: .9375rem 1.25rem;
+    gap: 1.5625rem;
+}
+
+
+/* Section Recently Played */
+.recently-played{
+    padding: .9375rem 1.25rem;
+}
+
+.row{
+    display: flex;
+}
+
+.row .col{
+    width: calc(100% / 2);
+}
+
+.container-album{
+    width: 12.5rem;
+    padding: 0 .625rem;
+    position: relative;
+}
+
+.hoverlay{
+    display: none;
+    width: 11.25rem;
+    height: 11.25rem;
+    text-align: center;
+    line-height: 12.5rem;
+    color: #fff;
+    font-size: 3.125rem;
+    background-color: rgba( 0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+}
+
+.container-album:hover .hoverlay{
+    display: block;
+}
+
+
 
 
 
@@ -198,8 +289,9 @@ footer{
 /* RESPONSIVE */
 /* Da 500px a infinito */
 @media screen and (min-width: 550px){
+    /* Header */
     header{
-        width: 10rem;
+        width: 10.625rem;
     }
 
     #nav-top div > #logo{
@@ -210,9 +302,15 @@ footer{
         display: none;
     }
 
-    header a, span, li, h4, strong, hr, #add-square{
+    .padding:first-child{
+        border-left: ;
+    } 
+
+    header #playlist, a, span, h4, strong, hr, #add-square{
         display: inline-block;
     }
+
+    /* Main */
 }
 
 

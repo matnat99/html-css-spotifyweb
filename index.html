@@ -7,8 +7,11 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- /Google Fonts -->
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- /FontAwesome -->
     <title>Spotify Web</title>
 </head>
 <body>
@@ -37,7 +40,7 @@
                         <a href="#">La tua libreria</a>
                     </div>
                 </div> 
-                <nav id="nav-center">
+                <nav id="playlist">
                     <h4>PLAYLIST</h4>
                     <div id="add-playlist-container">
                         <a href="#" id="add-square">+</a>
@@ -47,6 +50,9 @@
                     </div>
                     <div id="playlist-name">
                         <ul>
+                            <li>
+                                <a href="#">Nome Playlist</a>
+                            </li>
                             <li>
                                 <a href="#">Nome Playlist</a>
                             </li>
@@ -89,8 +95,47 @@
         </header>
         <main>
             <div id="header-main">
-                
+                <button>EFFETTUA L'UPGRADE</button>
             </div>
+           <div>
+            <nav id="nav-main">
+                <ul>
+                    <li>IN EVIDENZA</li>
+                    <li>PODCAST</li>
+                    <li>CLASSIFICHE</li>
+                    <li>GENERI E MOOD</li>
+                    <li>NUOVE USCITE</li>
+                    <li>SCOPRI</li>
+                </ul>
+            </nav>
+            <section class="recently-played">
+                <h3>Recently played</h3>
+                <div class="row">
+                    <div class="col">
+                        <div class="container-album">
+                            <div class="container-img">
+                                <img src="img/metal_lifting.jpg" alt="Metal album">
+                                <div class="hoverlay">
+                                    <i class="fa-regular fa-circle-play"></i>
+                                </div>
+                            </div>
+                            <div class="container-details"></div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="container-album">
+                            <div class="container-img">
+                                <img src="img/stranger.jpeg" alt="Stranger Things album">
+                                <div class="hoverlay">
+                                    <i class="fa-regular fa-circle-play"></i>
+                                </div>
+                            </div>
+                            <div class="container-details"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+           </div>
         </main>
     </div>
     <footer></footer>
