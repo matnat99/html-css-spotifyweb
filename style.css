@@ -33,7 +33,6 @@ img{
 /* TIPOGRAPHY */
 h3{
     color: #fff;
-    margin-bottom: 1.25rem;
 }
 
 h4{
@@ -249,14 +248,21 @@ main::-webkit-scrollbar{
 
 
 /* Section Recently Played */
-.recently-played{
+.container-played{
     padding: .9375rem 1.25rem;
+}
+
+.container-played > span{
+    color: #717171;
+    font-size: .8125rem;
 }
 
 .row{
     display: flex;
     flex-wrap: wrap;
     row-gap: .625rem;
+    margin-top: 1.875rem;
+    width: 100%;
 }
 
 .row .col{
@@ -267,6 +273,11 @@ main::-webkit-scrollbar{
     width: 12.5rem;
     padding: 0 .625rem;
     position: relative;
+}
+
+.container-img{
+    width: 11.25rem;
+    height: 11.25rem;
 }
 
 .hoverlay{
@@ -294,6 +305,7 @@ main::-webkit-scrollbar{
     color: #fff;
     display: block;
     font-size: .875rem;
+    margin-top: .3125rem;
 }
 
 .container-details > span{
@@ -301,7 +313,11 @@ main::-webkit-scrollbar{
     font-size: .8125rem;
 }
 
-
+/* Section Popolar Artists */
+.circle{
+    border-radius: 100%;
+    overflow: hidden;
+}
 
 
 
@@ -342,17 +358,21 @@ footer{
 
 /* Da 800px a infinito */
 @media screen and (min-width: 800px){
+    /* Header */
     header{
         width: 14.375rem;
     }
 
+    /* Main */
     .row .col{
         width: calc(100% / 4);
     }
 }
 
+
 /* Da 1500px a infinito */
 @media screen and (min-width: 1500px){
+    /* Main */
     .row .col{
         width: calc(100% / 6);
     }
