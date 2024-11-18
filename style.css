@@ -50,6 +50,10 @@ button{
     border-radius: 1.875rem;
 }
 
+button:hover {
+    transform: scale(1.1);
+}
+
 
 
 /* HEADER */
@@ -94,6 +98,10 @@ header img:not(#nav-top div > #logo,
     margin-bottom: .625rem;
 }
 
+header a:hover{
+    color: #fff;
+}
+
 
 /* Nav-top */
 #logo{
@@ -105,10 +113,6 @@ header img:not(#nav-top div > #logo,
 .select{
     padding-left: .75rem;
     border-left: .125rem solid #000000;
-}
-
-.margin{
-    margin-top: .1875rem;
 }
 
 /* Playlist */
@@ -137,6 +141,10 @@ header img:not(#nav-top div > #logo,
     color: #000000;
 } 
 
+#add-square:hover{
+    background-color: #fff;
+}
+
 #add-square > a{
     color: #000000;
 }
@@ -155,6 +163,10 @@ header img:not(#nav-top div > #logo,
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+}
+
+#playlist-name ul::-webkit-scrollbar{
+    display: none;
 }
 
 #playlist-name ul > li{
@@ -212,15 +224,26 @@ header img:not(#nav-top div > #logo,
 main{
     background-color: #141922;
     flex-grow: 1;
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
 }
 
 main::-webkit-scrollbar{
-    display: none;
+    width: .625rem;
 }
 
-#header-main{
+main::-webkit-scrollbar-track{
+    background-color: lightgray;
+    border-radius: .625rem;
+}
+
+main::-webkit-scrollbar-thumb{
+    background-color: rgb(105, 105, 105);
+    border-radius: .625rem;
+}
+
+/* Upgrade */
+#upgrade{
     background-color: #080B12;
     position: sticky;
     top: 0;
@@ -232,6 +255,7 @@ main::-webkit-scrollbar{
     line-height: 5rem;
 }
 
+/* Nav main */
 #nav-main{
     color: #717171;
     font-size: .75rem;
@@ -244,6 +268,25 @@ main::-webkit-scrollbar{
     justify-content: center;
     padding: .9375rem 1.25rem;
     gap: 1.5625rem;
+}
+
+#nav-main ul li > a:hover{
+    color: #fff;
+}
+
+#nav-main ul li a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #717171;
+}
+
+#nav-main ul li > hr{
+    display: block;
+    border: 1px solid limegreen;
+    width: 40%;
+    margin: auto;
 }
 
 
@@ -262,7 +305,6 @@ main::-webkit-scrollbar{
     flex-wrap: wrap;
     row-gap: .625rem;
     margin-top: 1.875rem;
-    width: 100%;
 }
 
 .row .col{
@@ -270,31 +312,31 @@ main::-webkit-scrollbar{
 }
 
 .container-album{
-    width: 12.5rem;
-    padding: 0 .625rem;
+    margin: 0 .625rem;
     position: relative;
 }
 
-.container-img{
-    width: 11.25rem;
-    height: 11.25rem;
+.container-album img{
+    display: block;
 }
 
 .hoverlay{
-    display: none;
-    width: 11.25rem;
-    height: 11.25rem;
-    text-align: center;
-    line-height: 12.5rem;
+    opacity: 0;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     color: #fff;
     font-size: 3.125rem;
-    background-color: rgba( 0, 0, 0, 0.7);
+    background-color: #000000;
     position: absolute;
     top: 0;
 }
 
 .container-album:hover .hoverlay{
-    display: block;
+    opacity: 0.7;
 }
 
 .container-details{
@@ -323,16 +365,166 @@ main::-webkit-scrollbar{
 
 /* FOOTER */
 footer{
+    display: flex;
     background-color: #282828;
     height: 5.625rem;
+    padding: .9375rem 1.25rem;
     flex-shrink: 0;
+    color: #fff;
+    font-size: .875rem;
+    gap: 1.25rem;
+}
+
+#song, #song-commands, #settings{
+    width: calc(100% / 3);
+}
+
+#song-commands{
+    text-align: center;
+}
+
+#settings{
+    text-align: right;
+}
+
+/* Song */
+#song{
+    display: flex;
+    align-items: center;
+    gap: .9375rem;
+}
+
+footer img{
+    max-width: 3.125rem;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+}
+
+.details > span{
+    font-size: .75rem;
+    color: #848484;
+}
+
+.details > span:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+#song div:last-child{
+    display: flex;
+    flex-direction: column;
+    row-gap: .625rem;
+    color: #848484;
+}
+
+#song div:last-child i:hover{
+    color: white;
+}
+
+/* Container song commands */
+#song-commands div:first-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .9375rem;
+    margin-bottom: 1.25rem;
+}
+
+.hover:hover{
+    scale: 1.6;
+}
+
+#container-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .625rem;
+    position: relative;
+}
+
+#sound-bar{
+    flex-grow: 1;
+    height: .3125rem;
+    background-color: #5A5A5A;
+    border-radius: 5px;
+
+}
+
+#sound-bar-inner{
+    width: 25%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #C1C1C1;
+}
+
+.cursor{
+    width: .875rem;
+    height: .875rem;
+    border-radius: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: .25rem;
+    left: 29%;
+    display: none;
+}
+
+#container-bar:hover .cursor{
+    display: block;
+}
+
+#container-bar:hover #sound-bar-inner{
+    background-color: limegreen;
+}
+
+/* Settings */
+#settings{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: .75rem;
+}
+
+#vol-bar{
+    width: 5rem;
+    height: .3125rem;
+    background-color: #5A5A5A;
+    border-radius: 5px;
+}
+
+#vol-bar-inner{
+    width: 60%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #C1C1C1;
+}
+
+.position{
+    display: flex;
+    align-items: center;
+    min-height: .9375rem;
+    position: relative;
+}
+
+#vol-bar > .cursor{
+    top: .0625rem;
+    left: 59%;
+}
+
+.position:hover #vol-bar-inner{
+    background-color: limegreen;
+}
+
+.position:hover .cursor{
+    display: block;
 }
 
 
-
 /* RESPONSIVE */
-/* Da 500px a infinito */
-@media screen and (min-width: 550px){
+/* Da 550px a infinito */
+@media screen and (min-width: 500px){
     /* Header */
     header{
         width: 10.625rem;
@@ -356,8 +548,8 @@ footer{
 }
 
 
-/* Da 800px a infinito */
-@media screen and (min-width: 800px){
+/* Da 700px a infinito */
+@media screen and (min-width: 650px){
     /* Header */
     header{
         width: 14.375rem;
@@ -370,8 +562,8 @@ footer{
 }
 
 
-/* Da 1500px a infinito */
-@media screen and (min-width: 1500px){
+/* Da 1000px a infinito */
+@media screen and (min-width: 1000px){
     /* Main */
     .row .col{
         width: calc(100% / 6);
