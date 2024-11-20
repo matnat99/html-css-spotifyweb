@@ -165,7 +165,7 @@ header a:hover{
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    max-height: 10rem;
+    max-height: 8.75rem;
 }
 
 #playlist-name ul::-webkit-scrollbar{
@@ -447,18 +447,17 @@ footer img{
     justify-content: space-between;
     align-items: center;
     gap: .625rem;
-    position: relative;
 }
 
-#sound-bar{
+.bar{
     flex-grow: 1;
     height: .3125rem;
     background-color: #5A5A5A;
     border-radius: 5px;
-
+    position: relative;
 }
 
-#sound-bar-inner{
+.bar-inner{
     width: 25%;
     height: 100%;
     border-radius: 5px;
@@ -471,8 +470,8 @@ footer img{
     border-radius: 100%;
     background-color: #fff;
     position: absolute;
-    top: .25rem;
-    left: 28%;
+    top: -0.25rem;
+    left: 24%;
     display: none;
 }
 
@@ -480,7 +479,7 @@ footer img{
     display: block;
 }
 
-#container-bar:hover #sound-bar-inner{
+#container-bar:hover .bar-inner{
     background-color: limegreen;
 }
 
@@ -492,39 +491,18 @@ footer img{
     gap: .75rem;
 }
 
-#vol-bar{
-    width: 5rem;
-    height: .3125rem;
-    background-color: #5A5A5A;
-    border-radius: 5px;
+#settings .bar{
+    max-width: 6.25rem;
 }
 
-#vol-bar-inner{
-    width: 60%;
-    height: 100%;
-    border-radius: 5px;
-    background-color: #C1C1C1;
+.bar:hover .cursor{
+    display: block;
 }
 
-.position{
-    display: flex;
-    align-items: center;
-    min-height: .9375rem;
-    position: relative;
-}
-
-#vol-bar > .cursor{
-    top: .0625rem;
-    left: 59%;
-}
-
-.position:hover #vol-bar-inner{
+.bar:hover .bar-inner{
     background-color: limegreen;
 }
 
-.position:hover .cursor{
-    display: block;
-}
 
 
 /* RESPONSIVE */
@@ -572,5 +550,12 @@ footer img{
     /* Main */
     .row .col{
         width: calc(100% / 6);
+    }
+
+     /* Footer */
+     #song div:last-child{
+        display:flex;
+        flex-direction: row;
+        gap: .625rem;
     }
 }
